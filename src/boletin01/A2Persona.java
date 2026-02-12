@@ -5,4 +5,5 @@ public class A2Persona {
 	String name;
 	String surname;
 	int age;
+	String adult;
 }
