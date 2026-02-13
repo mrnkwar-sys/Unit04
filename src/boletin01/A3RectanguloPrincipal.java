@@ -7,16 +7,16 @@ public class A3RectanguloPrincipal {
 		A3Rectangulo secondRec = new A3Rectangulo();
 		
 		//The coordinates of the first rectangle 
-		firstRec.x1 = 0;
-		firstRec.y1 = 0;
+		firstRec.x1 = 1;
+		firstRec.y1 = 3;
 		firstRec.x2 = 5;
-		firstRec.y2 = 5;
+		firstRec.y2 = 7;
 		
 		//The coordinates of the second rectangle 
-		secondRec.x1 = 7;
-		secondRec.y1 = 9;
-		secondRec.x2 = 2;
-		secondRec.y2 = 3;
+		secondRec.x1 = 2;
+		secondRec.y1 = 4;
+		secondRec.x2 = 6;
+		secondRec.y2 = 8;
 		
 		
 		//To get the area of the rectangles, we have to apply the next formula: |x2 - x1| * |y2 - y1| 
@@ -46,18 +46,28 @@ public class A3RectanguloPrincipal {
 			secondRec.part2 = secondRec.y1 - secondRec.y2;
 		}
 		
-		//We calculate the perimeter
-		firstRec.perimeter = firstRec.part1 * firstRec.part2;
+		//We calculate the area
+		firstRec.area = firstRec.part1 * firstRec.part2;
 		
-		secondRec.perimeter = secondRec.part1 * secondRec.part2;
+		secondRec.area = secondRec.part1 * secondRec.part2;
+		
+		//To get the perimeter of the rectangles, we apply the next formula: 2 * |(x2-x1) + (y2-y1)|
+		firstRec.perimeter = 2 * (firstRec.part1 + firstRec.part2);
+		
+		secondRec.perimeter = 2 * (secondRec.part1 + secondRec.part2);
 		
 		//The program will show through the console the coordinates of both rectangles, their perimeter and their area
 		System.out.println("DATOS DEL PRIMER RECTÁNGULO:");
-		
-		//To show the coordinates, we will keep them inside tables
 		System.out.println("Coordenadas: " + "(" + firstRec.x1 + ", " + firstRec.y1 + ") (" + firstRec.x2 + ", " + firstRec.y2 + ")");
+		System.out.println("Perímetro: " + firstRec.perimeter);
+		System.out.println("Área: " + firstRec.area);
+		
 		System.out.println();
+		
 		System.out.println("DATOS DEL SEGUNDO RECTÁNGULO:");
+		System.out.println("Coordenadas: " + "(" + secondRec.x1 + ", " + secondRec.y1 + ") (" + secondRec.x2 + ", " + secondRec.y2 + ")");
+		System.out.println("Perímetro: " + secondRec.perimeter);
+		System.out.println("Área: " + secondRec.area);
 	}
 
 }
