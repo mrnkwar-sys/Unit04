@@ -3,20 +3,8 @@ package boletin01;
 public class A3RectanguloPrincipal {
 
 	public static void main(String[] args) {
-		A3Rectangulo firstRec = new A3Rectangulo();
-		A3Rectangulo secondRec = new A3Rectangulo();
-		
-		//The coordinates of the first rectangle 
-		firstRec.x1 = 1;
-		firstRec.y1 = 3;
-		firstRec.x2 = 5;
-		firstRec.y2 = 7;
-		
-		//The coordinates of the second rectangle 
-		secondRec.x1 = 2;
-		secondRec.y1 = 4;
-		secondRec.x2 = 6;
-		secondRec.y2 = 8;
+		A3Rectangulo firstRec = new A3Rectangulo(0, 0, 5, 5);
+		A3Rectangulo secondRec = new A3Rectangulo(7, 9, 2, 3);
 		
 		
 		//To get the area of the rectangles, we have to apply the next formula: |x2 - x1| * |y2 - y1| 

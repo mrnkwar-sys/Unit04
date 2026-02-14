@@ -7,8 +7,8 @@ public class A2PersonaPrincipal {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner (System.in);
 		
-		A2Persona person1 = new A2Persona();
-		A2Persona person2 = new A2Persona();
+		A2Persona person1 = new A2Persona("", "", "", 0, "");
+		A2Persona person2 = new A2Persona("", "", "", 0, "");
 		
 		//The person 1 has to introduce their name, surname, dni and age
 		System.out.println("Introduzca el nombre de la primera persona: ");
