@@ -17,23 +17,34 @@ public class A1PuntoPrincipal {
 		punto3.y = 7;
 		*/
 		
-		System.out.println("(" + punto1.x + "," + punto1.y + ")");
-		System.out.println("(" + punto2.x + "," + punto2.y + ")");
-		System.out.println("(" + punto3.x + "," + punto3.y + ")");
+		System.out.println("(" + punto1.getX() + "," + punto1.getY() + ")");
+		System.out.println("(" + punto2.getX() + "," + punto2.getY() + ")");
+		System.out.println("(" + punto3.getX() + "," + punto3.getY() + ")");
 		
+		/*
 		punto1.x -= 2;
 		punto1.y -= 2;
 		
 		punto2.x += 2;
 		punto2.y += 2;
 		
-		punto2.x *= 2;
-		punto2.y *= 2;
+		punto3.x *= 2;
+		punto3.y *= 2;
+		*/
+		
+		punto1.setX(5-2);
+		punto1.setY(0-2);
+		
+		punto2.setX(10+2);
+		punto2.setY(10+2);
+		
+		punto3.setX(-3*2);
+		punto3.setY(7*2);
 		
 		System.out.println();
-		System.out.println("(" + punto1.x + "," + punto1.y + ")");
-		System.out.println("(" + punto2.x + "," + punto2.y + ")");
-		System.out.println("(" + punto3.x + "," + punto3.y + ")");
+		System.out.println("(" + punto1.getX() + "," + punto1.getY() + ")");
+		System.out.println("(" + punto2.getX() + "," + punto2.getY() + ")");
+		System.out.println("(" + punto3.getX() + "," + punto3.getY() + ")");
 	}
 
 }

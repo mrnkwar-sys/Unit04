@@ -18,14 +18,19 @@ public class A1Punto {
 	}
 	
 	public void setX(int x) {
-		if (x%1 == 0) {
-			this.x = x;
-		}
+		this.x = x;
 	}
 	
 	public void setY(int y) {
-		if (y%1 == 0) {
-			this.y = y;
-		}
+		this.y = y;
+	}
+	
+	public void setXY(int x, int y) {
+		this.x = x + 1;
+		this.y = y + 1;
+	}
+	
+	public void desplaza(int dx, int dy) {
+		
 	}
 }
