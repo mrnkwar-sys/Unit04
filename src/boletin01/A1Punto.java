@@ -3,6 +3,9 @@ package boletin01;
 public class A1Punto {
 	private int x;
 	private int y;
+	private int dx;
+	private int dy;
+	private double puntoP;
 	
 	A1Punto (int x, int y){
 		this.x = x;
@@ -26,11 +29,12 @@ public class A1Punto {
 	}
 	
 	public void setXY(int x, int y) {
-		this.x = x + 1;
-		this.y = y + 1;
+		this.x = ++x;
+		this.y = ++y;
 	}
 	
 	public void desplaza(int dx, int dy) {
-		
+		this.dx = dx;
+		this.dy = dy;
 	}
 }

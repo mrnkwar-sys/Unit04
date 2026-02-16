@@ -41,8 +41,11 @@ public class A1PuntoPrincipal {
 		punto3.setX(-3*2);
 		punto3.setY(7*2);
 		
+		//D1 Activity; The movement of the point 1
+		punto1.desplaza(punto1.getX() + 3, punto1.getY() + 3);
+		
 		System.out.println();
-		System.out.println("(" + punto1.getX() + "," + punto1.getY() + ")");
+		/*System.out.println("(" + punto1.getX() + "," + punto1.getY() + ")");*/
 		System.out.println("(" + punto2.getX() + "," + punto2.getY() + ")");
 		System.out.println("(" + punto3.getX() + "," + punto3.getY() + ")");
 	}
