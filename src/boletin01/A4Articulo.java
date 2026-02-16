@@ -10,15 +10,23 @@ public class A4Articulo {
 	A4Articulo (String nombre, double precioSinIva, int iva, int cuantosQuedan){
 		if (nombre.equals("FALDA")) {
 			this.nombre = nombre;
+		} else {
+			this.nombre = "ARTICULO INCORRECTO";
 		}
 		if (precioSinIva > 0) {
 			this.precioSinIva = precioSinIva;
+		} else {
+			this.precioSinIva = 5;
 		}
 		if (iva == 21) {
 			this.iva = iva;
+		} else {
+			this.iva = 21;
 		}
 		if (cuantosQuedan >= 0) {
 			this.cuantosQuedan = cuantosQuedan;
+		} else {
+			this.cuantosQuedan = 10;
 		}
 		}
 	
