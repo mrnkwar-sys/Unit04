@@ -43,7 +43,7 @@ public class A2PersonaPrincipal {
 			person1.adult = "no es mayor de edad";
 		}
 		*/
-		if (person1.getAge() > 18) {
+		if (person1.esMayorDeEdad() == true) {
 			person1.setAdult("es mayor de edad");
 		} else {
 			person1.setAdult("es menor de edad");
@@ -56,17 +56,37 @@ public class A2PersonaPrincipal {
 		}
 		*/
 		
-		if (person2.getAge() > 18) {
+		if (person2.esMayorDeEdad() == true) {
 			person2.setAdult("es mayor de edad");
 		} else {
 			person2.setAdult("es menor de edad");
 		}
 		
-		System.out.println(person1.getName() + " " + person1.getSurname() + " con DNI " + person1.getDni() + " " + person1.getAdult());
-		System.out.println(person2.getName() + " " + person2.getSurname() + " con DNI " + person2.getDni() + " " + person2.getAdult());
+		//To tell if the person is retired or not
+		if (person1.esJubilado() == true) {
+			person1.setRetired("está jubilado");
+		} else {
+			person1.setRetired("no está jubilado");
+		}
 		
+		if (person2.esJubilado() == true) {
+			person2.setRetired("está jubilado");
+		} else {
+			person2.setRetired("no está jubilado");
+		}
+		
+		/*System.out.println(person1.getName() + " " + person1.getSurname() + " con DNI " + person1.getDni() + " " + person1.getAdult() + " y " + person1.getRetired());
+		System.out.println(person2.getName() + " " + person2.getSurname() + " con DNI " + person2.getDni() + " " + person2.getAdult() + " y " + person2.getRetired());
+		*/
+		
+		System.out.println(person1.toString());
+		System.out.println(person2.toString());
+		
+		//The age difference among both people
+		System.out.println("La diferencia de edad entre estas dos personas es de " + person1.diferenciaEdad(person2) + " años");
 		//Close Scanner
 		sc.close();
+		
 	}
-
 }
+

@@ -21,7 +21,7 @@ public class A3RectanguloPrincipal {
 		}
 		*/
 		
-		if (firstRec.getX2() > firstRec.getX1()) {
+		/*if (firstRec.getX2() > firstRec.getX1()) {
 			firstRec.setPart1(firstRec.getX2() - firstRec.getX1());
 		} else {
 			firstRec.setPart1(firstRec.getX1() - firstRec.getX2());
@@ -31,7 +31,7 @@ public class A3RectanguloPrincipal {
 			firstRec.setPart2(firstRec.getY2() - firstRec.getY1());
 		} else {
 			firstRec.setPart2(firstRec.getY1() - firstRec.getY2());
-		}
+		}*/
 		
 		
 		//The second rectangle
@@ -48,7 +48,7 @@ public class A3RectanguloPrincipal {
 		}
 		*/
 		
-		if (secondRec.getX2() > secondRec.getX1()) {
+		/*if (secondRec.getX2() > secondRec.getX1()) {
 			secondRec.setPart1(secondRec.getX2() - secondRec.getX1());
 		} else {
 			secondRec.setPart1(secondRec.getX1() - secondRec.getX2());
@@ -58,30 +58,30 @@ public class A3RectanguloPrincipal {
 			secondRec.setPart2(secondRec.getY2() - secondRec.getY1());
 		} else {
 			secondRec.setPart2(secondRec.getY1() - secondRec.getY2());
-		}
+		}*/
 		
 		//We calculate the area
-		firstRec.setArea(firstRec.getPart1() * firstRec.getPart2());
+		/*firstRec.setArea(firstRec.getPart1() * firstRec.getPart2());
 		
-		secondRec.setArea(secondRec.getPart1() * secondRec.getPart2());
+		secondRec.setArea(secondRec.getPart1() * secondRec.getPart2());*/
 		
 		//To get the perimeter of the rectangles, we apply the next formula: 2 * |(x2-x1) + (y2-y1)|
-		firstRec.setPerimeter(2 * (firstRec.getPart1() + firstRec.getPart2()));
+		/*firstRec.setPerimeter(2 * (firstRec.getPart1() + firstRec.getPart2()));
 		
-		secondRec.setPerimeter(2 * (secondRec.getPart1() + secondRec.getPart2()));
+		secondRec.setPerimeter(2 * (secondRec.getPart1() + secondRec.getPart2()));*/
 		
 		//The program will show through the console the coordinates of both rectangles, their perimeter and their area
 		System.out.println("DATOS DEL PRIMER RECTÁNGULO:");
-		System.out.println("Coordenadas: " + "(" + firstRec.getX1() + ", " + firstRec.getY1() + ") (" + firstRec.getX2() + ", " + firstRec.getY2() + ")");
-		System.out.println("Perímetro: " + firstRec.getPerimeter());
-		System.out.println("Área: " + firstRec.getArea());
+		System.out.println(firstRec.toString());
+		System.out.println(firstRec.toString1());
+		System.out.println(firstRec.toString2());
 		
 		System.out.println();
 		
 		System.out.println("DATOS DEL SEGUNDO RECTÁNGULO:");
-		System.out.println("Coordenadas: " + "(" + secondRec.getX1() + ", " + secondRec.getY1() + ") (" + secondRec.getX2() + ", " + secondRec.getY2() + ")");
-		System.out.println("Perímetro: " + secondRec.getPerimeter());
-		System.out.println("Área: " + secondRec.getArea());
+		System.out.println(secondRec.toString());
+		System.out.println(secondRec.toString1());
+		System.out.println(secondRec.toString2());
 	}
 
 }

@@ -3,7 +3,7 @@ package boletin01;
 public class A1Punto {
 	private int x;
 	private int y;
-	private double puntoP;
+	private double distanciaPuntos;
 	private String chain;
 	
 	A1Punto (int x, int y){
@@ -38,8 +38,10 @@ public class A1Punto {
 		this.y = dy;
 	}
 	
-	public double distancia(double puntoP) {
-		return puntoP;
+	public double distancia(A1Punto p) {
+		double distanciaPuntos;
+		distanciaPuntos = Math.sqrt((p.x - x)^2 + (p.y - y)^2);
+		return distanciaPuntos;
 	}
 	
 	public String toString() {

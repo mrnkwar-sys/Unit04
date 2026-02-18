@@ -9,6 +9,7 @@ public class A3Rectangulo {
 	private int area;
 	private int part1;
 	private int part2;
+	private String chain;
 	
 	A3Rectangulo (int x1, int y1, int x2, int y2){
 		if (y1 < y2) {
@@ -36,10 +37,25 @@ public class A3Rectangulo {
 	}
 	
 	public int getPerimeter() {
+		if (x2 > x1) {
+			part1 = x2 - x1;
+		} else {
+			part1 = x1 - x2;
+		}
+		
+		if (y2 > y1) {
+			part2 = y2 - y1;
+		} else {
+			part2 = y1 - y2;
+		}
+		
+		perimeter = 2 * (part1 + part2);
+		
 		return perimeter;
 	}
 	
 	public int getArea() {
+		area = part1 * part2;
 		return area;
 	}
 	
@@ -82,4 +98,37 @@ public class A3Rectangulo {
 	public void setPart2(int part2) {
 		this.part2 = part2;
 	}
+	
+	public void setX1Y1(int x1, int y1) {
+		this.x1 = x1;
+		this.y1 = y1;
+	}
+	
+	public void setX2Y2(int x2, int y2) {
+		this.x2 = x2;
+		this.y2 = y2;
+	}
+	
+	public void setAll(int x1, int x2, int y1, int y2) {
+		this.x1 = x1;
+		this.y1 = y1;
+		this.x2 = x2;
+		this.y2 = y2;
+	}
+	
+	public String toString() {
+		chain = "Coordenadas: " + "(" + x1 + ", " + y1 + ") (" + x2 + ", " + y2 + ")";
+		return chain;
+	}
+	
+	public String toString1() {
+		chain = "Perímetro: " + perimeter;
+		return chain;
+	}
+	
+	public String toString2() {
+		chain = "Área: " + area;
+		return chain;
+	}
+	
 }

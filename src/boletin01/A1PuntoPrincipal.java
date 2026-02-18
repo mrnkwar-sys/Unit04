@@ -52,6 +52,11 @@ public class A1PuntoPrincipal {
 		System.out.println(punto1.toString());
 		System.out.println(punto2.toString());
 		System.out.println(punto3.toString());
+		
+		System.out.println();
+		System.out.println("La distancia entre el punto 1 y el 2 es " + punto1.distancia(punto2));
+		System.out.println("La distancia entre el punto 3 y el 1 es " + punto3.distancia(punto1));
+		System.out.println("La distancia entre el punto 2 y el 3 es " + punto3.distancia(punto2));
 	}
 
 }
