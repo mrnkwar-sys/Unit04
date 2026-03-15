@@ -1,8 +1,8 @@
-package boletin2;
+package boletin02;
 
 import java.util.Scanner;
 
-import boletin2.Libro.genre;
+import boletin02.Libro.genre;
 
 public class MainLibro {
 	public static Scanner sc = new Scanner(System.in);

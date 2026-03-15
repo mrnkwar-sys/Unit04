@@ -1,4 +1,4 @@
-package boletin2;
+package boletin02;
 
 class CuentaCorriente {
 	private String dni;

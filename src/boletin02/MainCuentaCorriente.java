@@ -1,8 +1,8 @@
-package boletin2;
+package boletin02;
 
 import java.util.Scanner;
 
-import boletin2.CuentaCorriente.Nationality;
+import boletin02.CuentaCorriente.Nationality;
 
 public class MainCuentaCorriente {
 	

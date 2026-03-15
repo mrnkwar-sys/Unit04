@@ -1,7 +1,7 @@
-package boletin2;
+package boletin02;
 
-import boletin2.Pizza.size;
-import boletin2.Pizza.type;
+import boletin02.Pizza.size;
+import boletin02.Pizza.type;
 
 public class MainPizza {
 

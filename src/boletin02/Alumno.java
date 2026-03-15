@@ -1,4 +1,4 @@
-package boletin2;
+package boletin02;
 
 public class Alumno {
 	private String name;
