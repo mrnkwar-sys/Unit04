@@ -49,16 +49,16 @@ public class Fraccion {
 		return resultSum;
 	}
 	
-	public int[] substraction(int numerator, int denominator) {
-		//The array that will keep the values of the substraction
+	public int[] subtraction(int numerator, int denominator) {
+		//The array that will keep the values of the subtraction
 		int resultSub[] = new int[2];
 				
-		//If the fractions have the same numerator, we will maintain the denominator and substract the numerators
-		if (this.denominator == denominator) {
+		//If the fractions have the same numerator, we will maintain the denominator and subtract the numerators
+		if (denominator == this.denominator) {
 			this.numerator -= numerator;
 		} else {
-			this.numerator = (this.numerator*denominator) - (this.denominator*numerator);
-			this.denominator *= this.denominator;
+			this.numerator = this.numerator*denominator - this.denominator*numerator;
+			this.denominator *= denominator;
 		}
 				
 		//Fill the array with the results

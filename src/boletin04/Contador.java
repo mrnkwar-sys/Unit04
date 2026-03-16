@@ -12,7 +12,9 @@ public class Contador {
 	}
 
 	public void setCont(int cont) {
-		this.cont = cont;
+		if (cont >= 0) {
+			this.cont = cont;
+		}
 	}
 	
 	public void increase(int cont) {

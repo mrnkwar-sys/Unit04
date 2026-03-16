@@ -18,10 +18,10 @@ public class MainFraccion {
 		otherFraction.setDenominator(sc.nextInt());
 		
 		//The sum of the fractions
-		//fraction.simplify(fraction.sum(otherFraction.getNumerator(), otherFraction.getDenominator()));
+		fraction.simplify(fraction.sum(otherFraction.getNumerator(), otherFraction.getDenominator()));
 		
-		//The substraction of the fractions
-		fraction.simplify(fraction.substraction(otherFraction.getNumerator(), otherFraction.getDenominator()));
+		//The subtraction of the fractions
+		fraction.simplify(fraction.subtraction(otherFraction.getNumerator(), otherFraction.getDenominator()));
 	}
 
 }
