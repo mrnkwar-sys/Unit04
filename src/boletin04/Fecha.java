@@ -49,7 +49,7 @@ public class Fecha {
 		 * A leap year happens when it is divisible by four
 		 * If the year is divisble by 100, it is not a leap year, except if it is divisible by 400 too
 		 */
-		if (year%4 == 0 || (year%100 == 0 || year%400 == 0)) {
+		if ((year%4 == 0 && year%100 != 0) || year%400 == 0) {
 			leapYear = true;
 		}
 		

@@ -13,6 +13,10 @@ public class CrudArticulo {
 		this.listaArticulos = listaArticulos;
 	}
 	
+	public ArrayList <Articulo> getListaArticulos(){
+		return listaArticulos;
+	}
+	
 	public void addArticle(Articulo article) {
 		listaArticulos.add(article);
 	}
@@ -21,17 +25,44 @@ public class CrudArticulo {
 		return listaArticulos.removeIf(article -> article.getName().equalsIgnoreCase(name));
 	}
 	
-	public void addGoods(String name, int howManyLast, int addedGoods) {
+	public boolean modifyPrice(String name, double newPrice) {
+		//The boolean that will indicate if it was possible to modify the price of an article
+		boolean updatedPrice = false;
+		
 		for (Articulo any : listaArticulos) {
 			if (any.getName().equalsIgnoreCase(name)) {
-				any.setHowManyLast(howManyLast + addedGoods);
+				any.setPrice(newPrice);
+				updatedPrice = true;
 			}
 		}
+		
+		return updatedPrice;
 	}
 	
-	public boolean takeGoods(String name, int howManyLast, int takenGoods) {
+	public boolean addGoods(String name, int addedGoods) {
+		//The boolean that will indicate if it is possible to take the goods
+		boolean moreGoods = false;
+				
+		for (Articulo any : listaArticulos) {
+			if (any.getName().equalsIgnoreCase(name)) {
+				any.setHowManyLast(any.getHowManyLast() + addedGoods);
+				moreGoods = true;
+			}
+		}
+		
+		return moreGoods;
+	}
+	
+	public boolean takeGoods(String name, int takenGoods) {
 		//The boolean that will indicate if it is possible to take the goods
 		boolean possibleGoods = false;
+		
+		for (Articulo any : listaArticulos) {
+			if (any.getName().equalsIgnoreCase(name) && any.getHowManyLast() >= takenGoods) {
+				any.setHowManyLast(any.getHowManyLast() - takenGoods);
+				possibleGoods = true;
+			}
+		}
 		
 		return possibleGoods;
 	}

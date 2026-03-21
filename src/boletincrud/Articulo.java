@@ -2,13 +2,18 @@ package boletincrud;
 
 public class Articulo {
 	private String name;
-	private double withoutIva;
-	private final double IVA = 0.21;
+	private double price;
 	private int howManyLast;
 	
-	public Articulo(String name, double withoutIva, int howManyLast) {
+	public Articulo() {
+		this.name = "";
+		this.price = 0.0;
+		this.howManyLast = 0;
+	}
+	
+	public Articulo(String name, double price, int howManyLast) {
 		this.name = name;
-		this.withoutIva = withoutIva;
+		this.price = price;
 		this.howManyLast = howManyLast;
 	}
 
@@ -20,12 +25,12 @@ public class Articulo {
 		this.name = name;
 	}
 
-	public double getWithoutIva() {
-		return withoutIva;
+	public double getPrice() {
+		return price;
 	}
 
-	public void setWithoutIva(double withoutIva) {
-		this.withoutIva = withoutIva;
+	public void setPrice(double price) {
+		this.price = price;
 	}
 
 	public int getHowManyLast() {
@@ -35,13 +40,9 @@ public class Articulo {
 	public void setHowManyLast(int howManyLast) {
 		this.howManyLast = howManyLast;
 	}
-
-	public double getIVA() {
-		return IVA;
-	}
 	
 	public String toString() {
-		String chain = "Nombre del artículo: " + name + " Precio del artículo sin IVA" + withoutIva + " IVA: " + IVA + " Cantidad en almacén : " + howManyLast;
+		String chain = "Nombre del artículo: " + name + " | Precio del artículo: " + price + " | Cantidad en almacén: " + howManyLast;
 		return chain;
 	}
 	
