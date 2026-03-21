@@ -38,10 +38,20 @@ public class MainGestion {
 				} while (opcionMenu != 5);
 			}
 			case 3 -> {
-				gestionPrestamos();
-				opcionMenu = sc.nextInt();
-				
-				operacionesPrestamos(opcionMenu);
+				do {
+					gestionPrestamos();
+					opcionMenu = sc.nextInt();
+					
+					operacionesPrestamos(opcionMenu);
+				} while (opcionMenu != 4);
+			}
+			case 4 -> {
+				do {
+					consultaSistema();
+					opcionMenu = sc.nextInt();
+					
+					
+				} while (opcionMenu != 4);
 			}
 			}
 		} while (opcionGestion != 5);
@@ -249,6 +259,8 @@ public class MainGestion {
 			System.out.println("Introduzca el codigo del libro: ");
 			codigo = sc.nextInt();
 			
+			sc.nextLine();
+			
 			System.out.println("Introduzca la fecha en la que se hizo el prestamo: ");
 			fecha = sc.nextLine();
 			
@@ -283,6 +295,40 @@ public class MainGestion {
 			} else {
 				System.out.println(biblio.getListaPrestamo());
 			}
+		}
+		case 4 -> System.out.println("Gracias por utilizar el programa");
+		default -> System.out.println("La opcion elegida no existe");
+		}
+	}
+	
+	public static void operacionesConsultas(int opcionMenu) {
+		//El codigo del libro buscado
+		int codigo;
+		
+		//El dni del socio buscado
+		String dni;
+		
+		switch(opcionMenu) {
+		case 1 -> {
+			if (biblio.getListaLibrosDisponibles().isEmpty()) {
+				System.out.println("No hay libros disponibles");
+			} else {
+				System.out.println(biblio.getListaLibrosDisponibles());
+			}
+		}
+		case 2 -> {
+			sc.nextLine();
+			
+			System.out.println("Introduzca el dni del socio que busca: ");
+			dni = sc.nextLine();
+			
+			biblio.buscarSocio(dni);
+		}
+		case 3 -> {
+			System.out.println("Introduzca el codigo del libro que busca: ");
+			codigo = sc.nextInt();
+			
+			biblio.buscarLibro(codigo);
 		}
 		case 4 -> System.out.println("Gracias por utilizar el programa");
 		default -> System.out.println("La opcion elegida no existe");

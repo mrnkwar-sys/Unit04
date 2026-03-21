@@ -8,19 +8,22 @@ public class Biblioteca {
 	ArrayList <Socio> listaSocios;
 	ArrayList <Prestamo> listaPrestamo;
 	ArrayList <Prestamo> listaDevolucion;
+	ArrayList <String> listaLibrosDisponibles;
 	
 	Biblioteca(){
 		listaLibros = new ArrayList<>();
 		listaSocios = new ArrayList<>();
 		listaPrestamo = new ArrayList<>();
 		listaDevolucion = new ArrayList<>();
+		listaLibrosDisponibles = new ArrayList<>();
 	}
 	
-	Biblioteca(ArrayList <Libro> listaLibros, ArrayList <Socio> listaSocios, ArrayList <Prestamo> listaPrestamo, ArrayList <Prestamo> listaDevolucion){
+	Biblioteca(ArrayList <Libro> listaLibros, ArrayList <Socio> listaSocios, ArrayList <Prestamo> listaPrestamo, ArrayList <Prestamo> listaDevolucion, ArrayList <String> listaLibrosDisponibles){
 		this.listaLibros = listaLibros;
 		this.listaSocios = listaSocios;
 		this.listaDevolucion = listaDevolucion;
 		this.listaPrestamo = listaPrestamo;
+		this.listaLibrosDisponibles = listaLibrosDisponibles;
 	}
 	
 	ArrayList <Libro> getListaLibros(){
@@ -37,6 +40,10 @@ public class Biblioteca {
 	
 	ArrayList <Prestamo> getListaDevolucion(){
 		return listaDevolucion;
+	}
+	
+	ArrayList <String> getListaLibrosDisponibles(){
+		return listaLibrosDisponibles;
 	}
 	
 	/**
@@ -147,12 +154,47 @@ public class Biblioteca {
 					for (Socio s : listaSocios) {
 						l.setNumEjemplares(l.getNumEjemplares()+1);
 						s.setPrestamos(s.getPrestamos()-1);
+						listaPrestamo.removeIf(cualquierPrestamo -> cualquierPrestamo.getCodigoLibro() == l.getCodigo() && cualquierPrestamo.getDniSocio().equalsIgnoreCase(s.getDni()));
 					}
 				}
 			}
 		}
 		
 		return devolucionHecha;
+	}
+	
+	public void librosDisponibles() {
+		for (Libro l : listaLibros) {
+			if (l.getNumEjemplares() > 0) {
+				listaLibrosDisponibles.add(l.getTitulo());
+			}
+		}
+	}
+	
+	public Object buscarSocio(String dni) {
+		//El socio buscado
+		Object socioBuscado = null;
+		
+		for (Socio s: listaSocios) {
+			if (s.getDni().equalsIgnoreCase(dni)) {
+				socioBuscado = s;
+			}
+		}
+		
+		return socioBuscado;
+	}
+	
+	public Object buscarLibro(int codigo) {
+		//El socio buscado
+		Object libroBuscado = null;
+		
+		for (Libro l: listaLibros) {
+			if (l.getCodigo() == codigo) {
+				libroBuscado = l;
+			}
+		}
+		
+		return libroBuscado;
 	}
 
 }
